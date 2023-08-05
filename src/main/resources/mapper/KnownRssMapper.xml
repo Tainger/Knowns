@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bonbon.knowns.mapper.KnownRssMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bonbon.knowns.model.entity.KnownsRss">
+        <id column="id" property="id" />
+        <result column="url" property="url" />
+        <result column="title" property="title" />
+        <result column="link" property="link" />
+        <result column="updated" property="updated" />
+        <result column="author" property="author" />
+        <result column="subtitle" property="subtitle" />
+        <result column="version" property="version" />
+        <result column="user_title" property="userTitle" />
+        <result column="http_etag" property="httpEtag" />
+        <result column="http_last_modified" property="httpLastModified" />
+        <result column="data_hash" property="dataHash" />
+        <result column="stale" property="stale" />
+        <result column="updates_enabled" property="updatesEnabled" />
+        <result column="last_updated" property="lastUpdated" />
+        <result column="added" property="added" />
+        <result column="last_exception" property="lastException" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, url, title, link, updated, author, subtitle, version, user_title, http_etag, http_last_modified, data_hash, stale, updates_enabled, last_updated, added, last_exception, type
+    </sql>
+
+</mapper>
