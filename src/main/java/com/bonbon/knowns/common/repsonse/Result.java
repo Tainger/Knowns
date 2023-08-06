@@ -1,11 +1,14 @@
 package com.bonbon.knowns.common.repsonse;
 
+import lombok.Data;
 import org.apache.poi.ss.formula.functions.T;
 
 /**
  * @author jiazhiyuan
  * @date 2023/8/5 10:22 AM
  */
+
+@Data
 public class Result<T> {
 
     /**
@@ -20,6 +23,17 @@ public class Result<T> {
     private String message;
 
     private T data;
+
+    /**
+     *
+     */
+    private String ipAddress;
+
+
+    private String traceId;
+
+
+    private String hostName;
 
 
     public Result(Boolean success, Integer code, String message, T data) {

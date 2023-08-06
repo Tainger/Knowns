@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author rocky
  * @since 2023-08-05
  */
-@Validated
 @RestController
 @RequestMapping("/api/rss")
 public class KnownsRssController {

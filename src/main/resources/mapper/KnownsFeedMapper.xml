@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bonbon.knowns.mapper.KnownsFeedMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bonbon.knowns.model.entity.KnownsFeed">
+        <id column="id" property="id" />
+        <result column="rss_id" property="rssId" />
+        <result column="title" property="title" />
+        <result column="link" property="link" />
+        <result column="author" property="author" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_time" property="createTime" />
+        <result column="summary" property="summary" />
+        <result column="content" property="content" />
+        <result column="enclosures" property="enclosures" />
+        <result column="source_type" property="sourceType" />
+        <result column="source_id" property="sourceId" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, rss_id, title, link, author, update_time, create_time, summary, content, enclosures, source_type, source_id, status
+    </sql>
+
+    <sql id="tableName">
+        knowns_feed
+    </sql>
+
+
+    <sql id="queryCriteria" >
+        <where>
+            <if test="rssId != null">
+                rss_id = #{rssId}
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectLatestOne" resultType="com.bonbon.knowns.model.entity.KnownsFeed" parameterType="com.bonbon.knowns.model.query.KnownsFeedQuery">
+        select  <include refid="Base_Column_List"></include>
+        from <include refid="tableName"></include>
+            <include refid="queryCriteria"></include>
+        order by create_time desc limit 1
+    </select>
+
+</mapper>
