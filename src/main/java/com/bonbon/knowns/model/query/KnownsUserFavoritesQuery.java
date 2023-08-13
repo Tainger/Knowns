@@ -4,20 +4,16 @@ import lombok.Data;
 
 /**
  * @author jiazhiyuan
- * @date 2023/8/5 9:24 PM
+ * @date 2023/8/13 1:55 PM
  */
 
+
 @Data
-public class KnownsFeedQuery {
+public class KnownsUserFavoritesQuery {
 
 
     /**
-     * rssId
-     */
-    private Long rssId;
-
-    /**
-     * url
+     * 查询url
      */
     private String url;
 

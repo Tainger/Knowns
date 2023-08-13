@@ -44,7 +44,7 @@ public class CodeGenerator {
     /**
      * 数据库表名 多个以英文逗号分隔
      */
-    private static final String TABLE_NAMES = "knowns_feed";
+    private static final String TABLE_NAMES = "knowns_user";
 
     /**
      * 作者

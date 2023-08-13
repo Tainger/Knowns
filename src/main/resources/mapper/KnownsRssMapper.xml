@@ -29,4 +29,19 @@
         id, url, title, link, updated, author, subtitle, version, user_title, http_etag, http_last_modified, data_hash, stale, updates_enabled, last_updated, added, last_exception, type
     </sql>
 
+    <sql id="table_name">
+        knowns_rss
+    </sql>
+
+
+    <select id="query" resultType="com.bonbon.knowns.model.entity.KnownsRss">
+        select
+            <include refid="Base_Column_List"></include>
+        from
+            <include refid="table_name"></include>
+            <where>
+
+            </where>
+    </select>
+
 </mapper>

@@ -49,7 +49,7 @@ public class KnownsFeedServiceImpl extends ServiceImpl<KnownsFeedMapper, KnownsF
     }
 
     @Override
-    public Result<Void> add(KnownsRssDTO knownsRssDTO) {
+    public Result add(KnownsRssDTO knownsRssDTO) {
         KnownsFeed knownsFeed = new KnownsFeed();
          knownsFeedMapper.insert(knownsFeed);
         return Result.OK();

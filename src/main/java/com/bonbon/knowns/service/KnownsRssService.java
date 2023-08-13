@@ -1,7 +1,9 @@
 package com.bonbon.knowns.service;
 
+import com.bonbon.knowns.common.repsonse.PageResult;
 import com.bonbon.knowns.common.repsonse.Result;
 import com.bonbon.knowns.model.dto.KnownsRssDTO;
+import com.bonbon.knowns.model.dto.KnownsRssPageDTO;
 import com.bonbon.knowns.model.entity.KnownsRss;
 import com.baomidou.mybatisplus.extension.service.IService;
 import javax.validation.Valid;
@@ -23,4 +25,11 @@ public interface KnownsRssService extends IService<KnownsRss> {
      * @param knownsRssDTO
      */
     Result add(KnownsRssDTO knownsRssDTO);
+
+    /**
+     * 分页查询
+     * @param knownsRssPageDTO
+     * @return
+     */
+    PageResult<KnownsRss> pagable(KnownsRssPageDTO knownsRssPageDTO);
 }

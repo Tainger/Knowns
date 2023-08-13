@@ -9,12 +9,7 @@ import org.apache.poi.ss.formula.functions.T;
  */
 
 @Data
-public class Result<T> {
-
-    /**
-     * 请求唯一ID
-     */
-    private String requestId;
+public class Result {
 
     private Boolean success;
 
@@ -22,7 +17,7 @@ public class Result<T> {
 
     private String message;
 
-    private T data;
+    private Object data;
 
     /**
      *
@@ -36,34 +31,26 @@ public class Result<T> {
     private String hostName;
 
 
-    public Result(Boolean success, Integer code, String message, T data) {
+    public Result(Boolean success, Integer code, String message, Object data) {
         this.success = success;
         this.code = code;
         this.message = message;
         this.data = data;
     }
 
-    public static Result<Void> OK() {
-        return new Result<>(true, 200, null, null);
+    public static Result OK() {
+        return new Result(true, 200, null, null);
     }
 
-    public static <T> Result<T> OK(T data) {
-        return new Result<T>(true, 200, null, data);
-    }
-
-
-    public Result<T> fail(String message) {
-        return new Result<T>(false, 500, message, null);
+    public static  Result OK(Object data) {
+        return new Result (true, 200, null, data);
     }
 
 
-    public String getRequestId() {
-        return requestId;
+    public static Result fail(String message) {
+        return new Result(false, 500, message, null);
     }
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
 
     public Boolean getSuccess() {
         return success;
@@ -89,11 +76,11 @@ public class Result<T> {
         this.message = message;
     }
 
-    public T getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }

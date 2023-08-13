@@ -1,5 +1,7 @@
 package com.bonbon.knowns.common.repsonse;
 
+import lombok.Data;
+
 import java.util.List;
 
 /**
@@ -8,6 +10,7 @@ import java.util.List;
  * @author liying22923
  * @since 2020/6/24
  */
+@Data
 public class PageResult<T> extends BaseResult {
 
     private static final long serialVersionUID = -6673395649748854452L;
@@ -22,19 +25,8 @@ public class PageResult<T> extends BaseResult {
      */
     private int totalCount;
 
-    public List<T> getData() {
-        return data;
-    }
-
-    public void setData(List<T> data) {
+    public PageResult(List<T> data, int totalCount) {
         this.data = data;
-    }
-
-    public int getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(int totalCount) {
         this.totalCount = totalCount;
     }
 }
